@@ -36,10 +36,10 @@
 */
 
 - (void)initImages {
-    squareImages = [NSArray arrayWithObjects: [UIImage imageNamed:@"Blue.png"],
+    squareImages = [[NSArray arrayWithObjects: [UIImage imageNamed:@"Blue.png"],
               [UIImage imageNamed:@"Red.png"], 
               [UIImage imageNamed:@"Green.png"], 
-              [UIImage imageNamed:@"Yellow.png"], nil];
+              [UIImage imageNamed:@"Yellow.png"], nil] retain];
 }
 
 - (void)initSquares {
@@ -70,11 +70,20 @@
     }
 }
 
+-(void)animate_ {
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initImages];
     [self initSquares];
+    [self putRandomSquares];
+    [self animate_];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"Touched");
     [self putRandomSquares];
 }
 

@@ -17,6 +17,8 @@
     
 }
 
+- (IBAction)touched:(id)target;
+
 
 @end
 
