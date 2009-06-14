@@ -9,6 +9,15 @@
 
 @implementation CoolrswapViewController
 
+// for now use a pre-defined number of  rows and cols, this may change to provide for different levels of
+// 
+#define NB_ROWS 4
+#define NB_COLS 4
+
+// parameter definining the layout of the squares
+#define SQ_WIDTH 70
+#define SQ_HEIGHT 70
+#define SQ_MARGIN 10
 
 
 /*
@@ -22,18 +31,52 @@
 */
 
 /*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
 }
 */
 
+- (void)initImages {
+    squareImages = [NSArray arrayWithObjects: [UIImage imageNamed:@"Blue.png"],
+              [UIImage imageNamed:@"Red.png"], 
+              [UIImage imageNamed:@"Green.png"], 
+              [UIImage imageNamed:@"Yellow.png"], nil];
+}
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)initSquares {
+    squareViews = [[NSMutableArray alloc] init];
+    
+    for ( int row=0;row<NB_ROWS;row++ )  {
+        for( int col=0;col<NB_COLS;col++ ) {
+            // start position for each square
+            int x = col*(SQ_WIDTH+SQ_MARGIN)+10;
+            int y = row*(SQ_HEIGHT+SQ_MARGIN);
+            UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x,y,SQ_WIDTH,SQ_HEIGHT)];
+            [[self view] addSubview: imageView];
+            [squareViews addObject: imageView];
+            
+            // release the image view since it's been held by the view, and the array
+            [imageView release];
+        }
+    }
+}
+
+- (void)putRandomSquares {
+    // initialize the random generator to a random-er value
+    srandom((long)[[NSDate date] timeIntervalSince1970]);
+    int nbImages = [squareImages count];    
+    for( int i=0; i<[squareViews count]; i++ ) {
+        UIImageView * squareView = [squareViews objectAtIndex:i];
+        squareView.image = [squareImages objectAtIndex: random()%nbImages];
+    }
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initImages];
+    [self initSquares];
+    [self putRandomSquares];
 }
-*/
 
 
 /*
@@ -58,6 +101,8 @@
 
 
 - (void)dealloc {
+    [squareImages release];
+    [squareViews release];
     [super dealloc];
 }
 

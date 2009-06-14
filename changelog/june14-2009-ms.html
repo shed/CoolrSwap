@@ -1,0 +1,14 @@
+
+Removed the hardcoded UIImageViews created in Interface Builder and replaced with images created programmatically.
+
+The code that changed is CoolrSwapViewController.m. There are two types of object created:
+- the images created in initImages()
+- the squares (UIImageView) showing images on screen, in initSquares()
+
+The init functions mentioned above are created in the method viewDidLoad. As the name implies the viewDidLoad method is called automatically by
+the iPhone framework when the view did load.
+
+The number of rows and columns is defined by the defines NB_ROWS, NB_COLS. The layout of the squares is defined by the SQ_* defines.
+
+There are 2 instance variables that hold the array of images (red, green, blue) and the list of onscreen views that display images. These are released in dealloc(). 
+Note that each UIImageView is released after being added to the view.

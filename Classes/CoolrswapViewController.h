@@ -8,8 +8,15 @@
 #import <UIKit/UIKit.h>
 
 @interface CoolrswapViewController : UIViewController {
-    IBOutlet UIImageView * image11;
+    
+    // array of views displaying the squares, need to be mutable to allow for initialization in loop
+    NSMutableArray * squareViews;
+
+    // array of images going into the squares, right now this is statically allocated
+    NSArray * squareImages;
+    
 }
+
 
 @end
 
