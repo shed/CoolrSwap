@@ -72,7 +72,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">transform-horiz.png</string>
+							<string key="NSResourceName">ColorSwap_Up_alpha.png</string>
 						</object>
 					</object>
 				</object>
