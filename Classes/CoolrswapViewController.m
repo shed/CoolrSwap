@@ -99,11 +99,25 @@
     [self putRandomTransformation];
 }
 
+/**
+ * Apply the active transformation to this ColoredSquare.
+ */
+-(void)doTransform: (ColoredSquare*)coloredSquare {
+    // for now just rotate the colors
+    int newColor = (coloredSquare.color+1);
+    if ( newColor >= [squareImages count] ) {
+        newColor = 0;
+    }
+    coloredSquare.color = newColor;
+    coloredSquare.view.image = [squareImages objectAtIndex: newColor];
+}
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     NSSet * allTouched = [event touchesForWindow: self.view.window];
     for( UITouch * touched in allTouched ) {
         ColoredSquare * coloredSquare = [squareViews objectAtIndex: touched.view.tag];
         NSLog( [NSString stringWithFormat: @"touched %d %d ", touched.view.tag, coloredSquare.color ]);
+        [self doTransform: coloredSquare];
         [self putRandomTransformation];
     }
 }
