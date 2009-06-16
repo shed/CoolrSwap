@@ -80,21 +80,19 @@
 	transformView.image = [transformImages objectAtIndex: random()%[transformImages count]];
 }
 
--(void)animate_ {
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initImages];
     [self initSquares];
     [self putRandomSquares];
-    [self animate_];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"Touched");
-    [self putRandomSquares];
+    NSSet * allTouched = [event touchesForWindow: self.view.window];
+    for( UITouch * touched in allTouched ) {
+        NSLog( [NSString stringWithFormat: @"touched %@ ", touched.view] );
+    }
 }
 
 
