@@ -13,6 +13,7 @@
 		183407590FE5798100BE618B /* ColorSwap_Down_alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 183407530FE5798100BE618B /* ColorSwap_Down_alpha.png */; };
 		1834075A0FE5798100BE618B /* ColorRing_Counter_alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 183407540FE5798100BE618B /* ColorRing_Counter_alpha.png */; };
 		1834075B0FE5798100BE618B /* ColorRing_Clockwise_alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 183407550FE5798100BE618B /* ColorRing_Clockwise_alpha.png */; };
+		183407C60FE5A3A300BE618B /* ColoredSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 183407C50FE5A3A300BE618B /* ColoredSquare.m */; };
 		183A10380FE0A62F002DCDB3 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 183A10340FE0A62F002DCDB3 /* Blue.png */; };
 		183A10390FE0A62F002DCDB3 /* Green.png in Resources */ = {isa = PBXBuildFile; fileRef = 183A10350FE0A62F002DCDB3 /* Green.png */; };
 		183A103A0FE0A62F002DCDB3 /* Red.png in Resources */ = {isa = PBXBuildFile; fileRef = 183A10360FE0A62F002DCDB3 /* Red.png */; };
@@ -34,6 +35,8 @@
 		183407530FE5798100BE618B /* ColorSwap_Down_alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ColorSwap_Down_alpha.png; path = images/Transforms/ColorSwap_Down_alpha.png; sourceTree = "<group>"; };
 		183407540FE5798100BE618B /* ColorRing_Counter_alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ColorRing_Counter_alpha.png; path = images/Transforms/ColorRing_Counter_alpha.png; sourceTree = "<group>"; };
 		183407550FE5798100BE618B /* ColorRing_Clockwise_alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ColorRing_Clockwise_alpha.png; path = images/Transforms/ColorRing_Clockwise_alpha.png; sourceTree = "<group>"; };
+		183407C40FE5A3A300BE618B /* ColoredSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredSquare.h; sourceTree = "<group>"; };
+		183407C50FE5A3A300BE618B /* ColoredSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredSquare.m; sourceTree = "<group>"; };
 		183A10340FE0A62F002DCDB3 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blue.png; path = images/Blue.png; sourceTree = "<group>"; };
 		183A10350FE0A62F002DCDB3 /* Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Green.png; path = images/Green.png; sourceTree = "<group>"; };
 		183A10360FE0A62F002DCDB3 /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Red.png; path = images/Red.png; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 				1D3623250D0F684500981E51 /* CoolrswapAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* CoolrswapViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* CoolrswapViewController.m */,
+				183407C40FE5A3A300BE618B /* ColoredSquare.h */,
+				183407C50FE5A3A300BE618B /* ColoredSquare.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* CoolrswapAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* CoolrswapViewController.m in Sources */,
+				183407C60FE5A3A300BE618B /* ColoredSquare.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

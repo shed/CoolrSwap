@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 
 
-@interface ColoredSquare : NSObject {
 
+@interface ColoredSquare : NSObject {
+    int color;
+    UIImageView * view;
 }
+
+@property (assign) int color;
+@property (retain,nonatomic) UIImageView * view;
 
 @end

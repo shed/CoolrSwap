@@ -6,6 +6,7 @@
 //
 
 #import "CoolrswapViewController.h"
+#import "ColoredSquare.h"
 
 @implementation CoolrswapViewController
 
@@ -59,8 +60,10 @@
             int x = col*(SQ_WIDTH+SQ_MARGIN)+10;
             int y = row*(SQ_HEIGHT+SQ_MARGIN);
             UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x,y,SQ_WIDTH,SQ_HEIGHT)];
+            ColoredSquare * cs = [[ColoredSquare alloc] init];
+            cs.view = imageView;            
             [[self view] addSubview: imageView];
-            [squareViews addObject: imageView];
+            [squareViews addObject: cs];
             
             // release the image view since it's been held by the view, and the array
             [imageView release];
@@ -73,10 +76,17 @@
     srandom((long)[[NSDate date] timeIntervalSince1970]);
     int nbImages = [squareImages count];    
     for( int i=0; i<[squareViews count]; i++ ) {
-        UIImageView * squareView = [squareViews objectAtIndex:i];
-        squareView.image = [squareImages objectAtIndex: random()%nbImages];
+        ColoredSquare * coloredSquare = (ColoredSquare*)[squareViews objectAtIndex:i];
+        UIImageView * squareView = coloredSquare.view;
+        coloredSquare.color = random()%nbImages;
+        squareView.image = [squareImages objectAtIndex: coloredSquare.color];
+        squareView.userInteractionEnabled = TRUE;
+        squareView.tag = i;
     }
 	
+}
+
+-(void) putRandomTransformation {
 	transformView.image = [transformImages objectAtIndex: random()%[transformImages count]];
 }
 
@@ -86,12 +96,15 @@
     [self initImages];
     [self initSquares];
     [self putRandomSquares];
+    [self putRandomTransformation];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     NSSet * allTouched = [event touchesForWindow: self.view.window];
     for( UITouch * touched in allTouched ) {
-        NSLog( [NSString stringWithFormat: @"touched %@ ", touched.view] );
+        ColoredSquare * coloredSquare = [squareViews objectAtIndex: touched.view.tag];
+        NSLog( [NSString stringWithFormat: @"touched %d %d ", touched.view.tag, coloredSquare.color ]);
+        [self putRandomTransformation];
     }
 }
 
