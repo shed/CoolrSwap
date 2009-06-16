@@ -15,10 +15,13 @@
     // array of images going into the squares, right now this is statically allocated
     NSArray * squareImages;
     
+	// array of transform images going into the bottom left hand corner of screen
+	NSArray * transformImages;
+	
+	IBOutlet UIImageView * transformView;
 }
 
-- (IBAction)touched:(id)target;
-
+@property (retain, nonatomic) UIImageView * transformView;
 
 @end
 

@@ -19,7 +19,7 @@
 #define SQ_HEIGHT 70
 #define SQ_MARGIN 10
 
-
+@synthesize transformView;
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -40,6 +40,14 @@
               [UIImage imageNamed:@"Red.png"], 
               [UIImage imageNamed:@"Green.png"], 
               [UIImage imageNamed:@"Yellow.png"], nil] retain];
+	
+	transformImages = [[NSArray arrayWithObjects:
+					   [UIImage imageNamed:@"ColorSwap_Up_alpha.png"],
+						[UIImage imageNamed:@"ColorSwap_Right_alpha.png"],
+						[UIImage imageNamed:@"ColorSwap_Down_alpha.png"],
+						[UIImage imageNamed:@"ColorSwap_Left_alpha.png"],
+						[UIImage imageNamed:@"ColorRing_Counter_alpha.png"],
+						[UIImage imageNamed:@"ColorRing_Clockwise_alpha.png"], nil] retain];
 }
 
 - (void)initSquares {
@@ -68,6 +76,8 @@
         UIImageView * squareView = [squareViews objectAtIndex:i];
         squareView.image = [squareImages objectAtIndex: random()%nbImages];
     }
+	
+	transformView.image = [transformImages objectAtIndex: random()%[transformImages count]];
 }
 
 -(void)animate_ {
@@ -112,6 +122,7 @@
 - (void)dealloc {
     [squareImages release];
     [squareViews release];
+	[transformImages release];
     [super dealloc];
 }
 
