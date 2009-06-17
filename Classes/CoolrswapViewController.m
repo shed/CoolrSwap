@@ -94,10 +94,14 @@
     coloredSquare.color = newColor;
 }
 
+-(ColoredSquare*)getSquareAtX: (int)x Y:(int)y {
+	return [squareViews objectAtIndex: ((y*NB_COLS)+x)];
+}
+
 -(void)swap: (ColoredSquare*)coloredSquare X:(int)x Y:(int)y {
 	int newX = (coloredSquare.x+x)%NB_ROWS; if ( newX < 0 ) { newX = newX + NB_ROWS;}
 	int newY = (coloredSquare.y+y)%NB_COLS; if ( newY < 0 ) { newY = newY + NB_COLS;}
-	ColoredSquare * newColoredSquare = [squareViews objectAtIndex: ((newY*NB_COLS)+newX)];
+	ColoredSquare * newColoredSquare = [self getSquareAtX: newX Y: newY];
 	int tempColor = newColoredSquare.color;
 	newColoredSquare.color = coloredSquare.color;
 	coloredSquare.color = tempColor;
@@ -128,6 +132,39 @@
 	}
 }
 
+//Determines if there are three colors in a horizontal row
+-(void)colorsMatchedHorizontal{
+	for ( int row=0;row<NB_ROWS-2;row++ )  {		
+        for( int col=0;col<NB_COLS;col++ ) {
+			ColoredSquare * cs1 = [self getSquareAtX: row Y: col];
+			ColoredSquare * cs2 = [self getSquareAtX: row+1 Y: col];
+			ColoredSquare * cs3 = [self getSquareAtX: row+2 Y: col];
+			if ( cs1.color == cs2.color && cs1.color == cs3.color ) {
+				NSLog( @"Found 3 in a horizontal row x: %d y: %d", row, col );
+			}
+		}
+    }
+}
+
+//Determines if there are three colors in a vertical row
+-(void)colorsMatchedVertical{
+	for ( int row=0;row<NB_ROWS;row++ )  {		
+        for( int col=0;col<NB_COLS-2;col++ ) {
+			ColoredSquare * cs1 = [self getSquareAtX: row Y: col];
+			ColoredSquare * cs2 = [self getSquareAtX: row Y: col+1];
+			ColoredSquare * cs3 = [self getSquareAtX: row Y: col+2];
+			if ( cs1.color == cs2.color && cs1.color == cs3.color ) {
+				NSLog( @"Found 3 in a vertical row x: %d y: %d", row, col );
+			}
+		}
+    }
+}
+
+-(void)colorsMatched{
+	[self colorsMatchedHorizontal];
+	[self colorsMatchedVertical];
+}
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     NSSet * allTouched = [event touchesForWindow: self.view.window];
     for( UITouch * touched in allTouched ) {
@@ -135,6 +172,7 @@
         NSLog( [NSString stringWithFormat: @"touched %d x: %d y: %d", coloredSquare.color, 
 				coloredSquare.x, coloredSquare.y ]);
         [self doTransform: coloredSquare];
+		[self colorsMatched];
         [self putRandomTransformation];
     }
 }
