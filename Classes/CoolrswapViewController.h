@@ -20,6 +20,10 @@
 	NSArray * transformImages;
     	
 	IBOutlet UIImageView * transformView;
+    
+    IBOutlet UILabel * totalLabel;
+    
+    int total;
 	
 	int transform;
 }

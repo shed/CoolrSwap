@@ -216,23 +216,21 @@
 						<key>_historyCapacity</key>
 						<integer>20</integer>
 						<key>bookmark</key>
-						<string>1899CD510FE89F8E00AB0972</string>
+						<string>18FD6ED10FE8CEFC00AC93C1</string>
 						<key>history</key>
 						<array>
-							<string>1899CCD30FE89A1B00AB0972</string>
 							<string>1899CD210FE89D6000AB0972</string>
 							<string>1899CD4F0FE89F8E00AB0972</string>
-							<string>1899CD490FE89F4800AB0972</string>
+							<string>18FD6EB80FE8CCF700AC93C1</string>
+							<string>18FD6EB90FE8CCF700AC93C1</string>
 						</array>
 						<key>prevStack</key>
 						<array>
 							<string>1899CD240FE89D6000AB0972</string>
 							<string>1899CD250FE89D6000AB0972</string>
 							<string>1899CD360FE89E7600AB0972</string>
-							<string>1899CD370FE89E7600AB0972</string>
-							<string>1899CD430FE89F1000AB0972</string>
-							<string>1899CD4A0FE89F4800AB0972</string>
-							<string>1899CD500FE89F8E00AB0972</string>
+							<string>18FD6EBA0FE8CCF700AC93C1</string>
+							<string>18FD6EBB0FE8CCF700AC93C1</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -322,16 +320,19 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>18</integer>
+									<integer>5</integer>
+									<integer>2</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 14}, {185, 428}}</string>
+							<string>{{0, 16}, {185, 428}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -374,12 +375,12 @@
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>1899CD4E0FE89F8E00AB0972</string>
+										<string>18FD6ED00FE8CEFC00AC93C1</string>
 										<key>history</key>
 										<array>
 											<string>18C875070FE7F5460058F77C</string>
 											<string>1899CD1F0FE89D6000AB0972</string>
-											<string>1899CCE10FE89A6300AB0972</string>
+											<string>1899CD530FE8A0BA00AB0972</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -503,11 +504,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1899CCA30FE8924B00AB0972</string>
+				<string>18FD6EB50FE8CCF700AC93C1</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>1899CCA40FE8924B00AB0972</string>
+				<string>18FD6EB60FE8CCF700AC93C1</string>
 				<string>1857A90A0FE5695300A5E4AA</string>
-				<string>1899CCA50FE8924B00AB0972</string>
+				<string>18FD6EB70FE8CCF700AC93C1</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -662,14 +663,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1899CCA60FE8924B00AB0972</string>
+				<string>18FD6EA40FE8C92900AC93C1</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>1899CCA70FE8924B00AB0972</string>
-				<string>1899CCA80FE8924B00AB0972</string>
-				<string>1899CCA90FE8924B00AB0972</string>
-				<string>1899CCAA0FE8924B00AB0972</string>
-				<string>1899CCAB0FE8924B00AB0972</string>
+				<string>18FD6EA50FE8C92900AC93C1</string>
+				<string>18FD6EA60FE8C92900AC93C1</string>
+				<string>18FD6EA70FE8C92900AC93C1</string>
+				<string>18FD6EA80FE8C92900AC93C1</string>
+				<string>18FD6EA90FE8C92900AC93C1</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -701,11 +702,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1899CD520FE89F8E00AB0972</string>
-		<string>1899CCB80FE8981300AB0972</string>
-		<string>1899CCAE0FE8924B00AB0972</string>
-		<string>18C875570FE802270058F77C</string>
+		<string>18FD6ECD0FE8CEAD00AC93C1</string>
+		<string>18FD6EBE0FE8CCF700AC93C1</string>
+		<string>18FD6EBF0FE8CCF700AC93C1</string>
 		<string>/Users/mseritan/clients/CocoaFluff/CoolrSwap-git/Coolrswap.xcodeproj</string>
+		<string>18C875570FE802270058F77C</string>
 	</array>
 	<key>WindowString</key>
 	<string>308 284 810 487 0 0 1440 878 </string>
