@@ -14,6 +14,29 @@
 @synthesize color;
 @synthesize x;
 @synthesize y;
-@synthesize view;
+
+-(id)initWithImages:(NSArray*)_colorImages parentView: (UIView*)parentView X:(int)col Y:(int)row {
+    colorImages = _colorImages;
+    x = col;
+    y = row;
+
+    view = [[UIImageView alloc] initWithFrame:CGRectMake(col*(SQ_WIDTH+SQ_MARGIN)+10, row*(SQ_HEIGHT+SQ_MARGIN),SQ_WIDTH,SQ_HEIGHT)];
+    [parentView addSubview: view];
+    view.userInteractionEnabled = TRUE;
+    return self;
+}
+
+-(void)setColor:(int)_color {
+    color = _color;
+    view.image = [colorImages objectAtIndex: color];
+}
+
+-(void)setTag:(int)_tag {
+    view.tag = _tag;
+}
+
+-(int)tag {
+    return view.tag;
+}
 
 @end

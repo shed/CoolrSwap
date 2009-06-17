@@ -15,10 +15,6 @@
 #define NB_ROWS 4
 #define NB_COLS 4
 
-// parameter definining the layout of the squares
-#define SQ_WIDTH 70
-#define SQ_HEIGHT 70
-#define SQ_MARGIN 10
 
 @synthesize transformView;
 /*
@@ -56,19 +52,10 @@
     
     for ( int row=0;row<NB_ROWS;row++ )  {
         for( int col=0;col<NB_COLS;col++ ) {
-            // start position for each square
-            int x = col*(SQ_WIDTH+SQ_MARGIN)+10;
-            int y = row*(SQ_HEIGHT+SQ_MARGIN);
-            UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x,y,SQ_WIDTH,SQ_HEIGHT)];
-            ColoredSquare * cs = [[ColoredSquare alloc] init];
-            cs.view = imageView;
-			cs.x = col;
-			cs.y = row;
-            [[self view] addSubview: imageView];
+            ColoredSquare * cs = [[ColoredSquare alloc] initWithImages: squareImages parentView: [self view] X:col Y:row];
             [squareViews addObject: cs];
+            cs.tag = [squareViews count]-1;
             
-            // release the image view since it's been held by the view, and the array
-            [imageView release];
         }
     }
 }
@@ -79,11 +66,7 @@
     int nbImages = [squareImages count];    
     for( int i=0; i<[squareViews count]; i++ ) {
         ColoredSquare * coloredSquare = (ColoredSquare*)[squareViews objectAtIndex:i];
-        UIImageView * squareView = coloredSquare.view;
         coloredSquare.color = random()%nbImages;
-        squareView.image = [squareImages objectAtIndex: coloredSquare.color];
-        squareView.userInteractionEnabled = TRUE;
-        squareView.tag = i;
     }
 	
 }
@@ -109,7 +92,6 @@
     // for now just rotate the colors
     int newColor = (coloredSquare.color+direction)%[squareImages count];
     coloredSquare.color = newColor;
-    coloredSquare.view.image = [squareImages objectAtIndex: newColor];
 }
 
 -(void)swap: (ColoredSquare*)coloredSquare X:(int)x Y:(int)y {
@@ -119,9 +101,6 @@
 	int tempColor = newColoredSquare.color;
 	newColoredSquare.color = coloredSquare.color;
 	coloredSquare.color = tempColor;
-	
-	coloredSquare.view.image = [squareImages objectAtIndex: coloredSquare.color];
-	newColoredSquare.view.image = [squareImages objectAtIndex: newColoredSquare.color];
 }
 
 -(void)doTransform: (ColoredSquare*)coloredSquare {
@@ -153,7 +132,7 @@
     NSSet * allTouched = [event touchesForWindow: self.view.window];
     for( UITouch * touched in allTouched ) {
         ColoredSquare * coloredSquare = [squareViews objectAtIndex: touched.view.tag];
-        NSLog( [NSString stringWithFormat: @"touched %d %d %d", coloredSquare.color, 
+        NSLog( [NSString stringWithFormat: @"touched %d x: %d y: %d", coloredSquare.color, 
 				coloredSquare.x, coloredSquare.y ]);
         [self doTransform: coloredSquare];
         [self putRandomTransformation];
