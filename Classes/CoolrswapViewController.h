@@ -20,6 +20,8 @@
 	NSArray * transformImages;
     	
 	IBOutlet UIImageView * transformView;
+	
+	int transform;
 }
 
 @property (retain, nonatomic) UIImageView * transformView;

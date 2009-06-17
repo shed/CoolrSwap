@@ -12,6 +12,8 @@
 @implementation ColoredSquare
 
 @synthesize color;
+@synthesize x;
+@synthesize y;
 @synthesize view;
 
 @end

@@ -61,7 +61,9 @@
             int y = row*(SQ_HEIGHT+SQ_MARGIN);
             UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x,y,SQ_WIDTH,SQ_HEIGHT)];
             ColoredSquare * cs = [[ColoredSquare alloc] init];
-            cs.view = imageView;            
+            cs.view = imageView;
+			cs.x = col;
+			cs.y = row;
             [[self view] addSubview: imageView];
             [squareViews addObject: cs];
             
@@ -87,7 +89,8 @@
 }
 
 -(void) putRandomTransformation {
-	transformView.image = [transformImages objectAtIndex: random()%[transformImages count]];
+	transform = random()%[transformImages count];
+	transformView.image = [transformImages objectAtIndex: transform];
 }
 
 
@@ -102,21 +105,56 @@
 /**
  * Apply the active transformation to this ColoredSquare.
  */
--(void)doTransform: (ColoredSquare*)coloredSquare {
+-(void)rotateColor: (ColoredSquare*)coloredSquare direction:(int)direction  {
     // for now just rotate the colors
-    int newColor = (coloredSquare.color+1);
-    if ( newColor >= [squareImages count] ) {
-        newColor = 0;
-    }
+    int newColor = (coloredSquare.color+direction)%[squareImages count];
     coloredSquare.color = newColor;
     coloredSquare.view.image = [squareImages objectAtIndex: newColor];
+}
+
+-(void)swap: (ColoredSquare*)coloredSquare X:(int)x Y:(int)y {
+	int newX = (coloredSquare.x+x)%NB_ROWS; if ( newX < 0 ) { newX = newX + NB_ROWS;}
+	int newY = (coloredSquare.y+y)%NB_COLS; if ( newY < 0 ) { newY = newY + NB_COLS;}
+	ColoredSquare * newColoredSquare = [squareViews objectAtIndex: ((newY*NB_COLS)+newX)];
+	int tempColor = newColoredSquare.color;
+	newColoredSquare.color = coloredSquare.color;
+	coloredSquare.color = tempColor;
+	
+	coloredSquare.view.image = [squareImages objectAtIndex: coloredSquare.color];
+	newColoredSquare.view.image = [squareImages objectAtIndex: newColoredSquare.color];
+}
+
+-(void)doTransform: (ColoredSquare*)coloredSquare {
+	switch (transform) {
+		case 0:
+			[self swap: coloredSquare X: 0 Y: -1];
+			break;
+		case 1:
+			[self swap: coloredSquare X: 1 Y: 0];
+			break;
+		case 2:
+			[self swap: coloredSquare X: 0 Y: 1];
+			break;
+		case 3:
+			[self swap: coloredSquare X: -1 Y: 0];
+			break;
+		case 4:
+			[self rotateColor:coloredSquare direction: -1];
+			break;
+		case 5:
+			[self rotateColor:coloredSquare direction: 1];
+			break;
+		default:
+			break;
+	}
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     NSSet * allTouched = [event touchesForWindow: self.view.window];
     for( UITouch * touched in allTouched ) {
         ColoredSquare * coloredSquare = [squareViews objectAtIndex: touched.view.tag];
-        NSLog( [NSString stringWithFormat: @"touched %d %d ", touched.view.tag, coloredSquare.color ]);
+        NSLog( [NSString stringWithFormat: @"touched %d %d %d", coloredSquare.color, 
+				coloredSquare.x, coloredSquare.y ]);
         [self doTransform: coloredSquare];
         [self putRandomTransformation];
     }

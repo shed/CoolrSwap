@@ -12,10 +12,14 @@
 
 @interface ColoredSquare : NSObject {
     int color;
+	int x;
+	int y;
     UIImageView * view;
 }
 
 @property (assign) int color;
+@property (assign) int x;
+@property (assign) int y;
 @property (retain,nonatomic) UIImageView * view;
 
 @end
