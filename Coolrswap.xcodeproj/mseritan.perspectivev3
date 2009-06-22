@@ -204,7 +204,7 @@
 				<key>PBXProjectModuleGUID</key>
 				<string>18C875570FE802270058F77C</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>CoolrswapViewController.m</string>
+				<string>ColoredSquare.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
@@ -212,19 +212,19 @@
 						<key>PBXProjectModuleGUID</key>
 						<string>18C875600FE8056B0058F77C</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>CoolrswapViewController.m</string>
+						<string>ColoredSquare.m</string>
 						<key>_historyCapacity</key>
 						<integer>20</integer>
 						<key>bookmark</key>
-						<string>189726290FEFC4DA006FB073</string>
+						<string>189726830FEFD60A006FB073</string>
 						<key>history</key>
 						<array>
 							<string>1897260D0FEFC4DA006FB073</string>
-							<string>1897260E0FEFC4DA006FB073</string>
 							<string>1897260F0FEFC4DA006FB073</string>
-							<string>189726100FEFC4DA006FB073</string>
 							<string>189726110FEFC4DA006FB073</string>
-							<string>189726000FEFC4C7006FB073</string>
+							<string>1897264A0FEFD339006FB073</string>
+							<string>1897267A0FEFD583006FB073</string>
+							<string>189726690FEFD3C0006FB073</string>
 						</array>
 						<key>prevStack</key>
 						<array>
@@ -255,6 +255,9 @@
 							<string>189726260FEFC4DA006FB073</string>
 							<string>189726270FEFC4DA006FB073</string>
 							<string>189726280FEFC4DA006FB073</string>
+							<string>1897264B0FEFD339006FB073</string>
+							<string>1897266A0FEFD3C0006FB073</string>
+							<string>1897267B0FEFD583006FB073</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -343,6 +346,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
+								<string>183A10330FE0A61E002DCDB3</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
@@ -350,11 +354,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>23</integer>
+									<integer>1</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 99}, {185, 428}}</string>
+							<string>{{0, 0}, {185, 428}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -385,7 +390,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1857A90A0FE5695300A5E4AA</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ColoredSquare.m</string>
+								<string>CoolrswapViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -393,21 +398,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1857A90B0FE5695300A5E4AA</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ColoredSquare.m</string>
+										<string>CoolrswapViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>189726040FEFC4DA006FB073</string>
+										<string>189726820FEFD60A006FB073</string>
 										<key>history</key>
 										<array>
 											<string>18C875070FE7F5460058F77C</string>
-											<string>1899CD1F0FE89D6000AB0972</string>
-											<string>1839C4BB0FEFAC4E00CF721F</string>
+											<string>189726670FEFD3C0006FB073</string>
+											<string>189726780FEFD583006FB073</string>
+											<string>189726770FEFD55A006FB073</string>
 										</array>
 										<key>prevStack</key>
 										<array>
 											<string>18C875540FE8021E0058F77C</string>
 											<string>1899CCBD0FE898E300AB0972</string>
+											<string>189726630FEFD3AC006FB073</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -724,7 +731,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1897262A0FEFC4DA006FB073</string>
+		<string>189726840FEFD60A006FB073</string>
+		<string>1897264E0FEFD339006FB073</string>
 		<string>1897262B0FEFC4DA006FB073</string>
 		<string>18C875570FE802270058F77C</string>
 		<string>/Users/mseritan/clients/CocoaFluff/CoolrSwap-git/Coolrswap.xcodeproj</string>

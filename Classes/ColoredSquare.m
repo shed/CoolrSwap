@@ -30,13 +30,14 @@
 
 - (void)animateFirstTouchAtPoint {
     
-#define GROW_ANIMATION_DURATION_SECONDS 0.15
+#define GROW_ANIMATION_DURATION_SECONDS 0.4
     
-    [UIView beginAnimations:nil context:nil];
+    [UIView beginAnimations:nil context:self];
     [UIView setAnimationDuration:GROW_ANIMATION_DURATION_SECONDS];
+    [UIView setAnimationRepeatCount: 3];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDidStopSelector:@selector(growAnimationDidStop:finished:context:)];
-    CGAffineTransform transform = CGAffineTransformMakeScale(1.2, 1.2);
+    CGAffineTransform transform = CGAffineTransformMakeScale(1.1, 1.1);
     view.transform = transform;
     [UIView commitAnimations];
 }
@@ -46,6 +47,7 @@
     
 #define MOVE_ANIMATION_DURATION_SECONDS 0.15
     
+    view.image = [imageManager getImage: color];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:MOVE_ANIMATION_DURATION_SECONDS];
     view.transform = CGAffineTransformMakeScale(1.1, 1.1);    
@@ -54,7 +56,7 @@
 
 -(void)setColor:(int)_color {
     color = _color;
-    view.image = [imageManager getImage: color];
+    view.image = [imageManager getFadedImage: color];
     [self animateFirstTouchAtPoint];
 }
 

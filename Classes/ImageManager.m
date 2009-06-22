@@ -16,10 +16,10 @@
                      [UIImage imageNamed:@"Red.png"], 
                      [UIImage imageNamed:@"Green.png"], 
                      [UIImage imageNamed:@"Yellow.png"], nil] retain];
-    fadedImages = [[NSArray arrayWithObjects: [UIImage imageNamed:@"Blue-1.png"],
-                     [UIImage imageNamed:@"Red-1.png"], 
-                     [UIImage imageNamed:@"Green-1.png"], 
-                     [UIImage imageNamed:@"Yellow-1.png"], nil] retain];
+    fadedImages = [[NSArray arrayWithObjects: [UIImage imageNamed:@"Blue_1.png"],
+                     [UIImage imageNamed:@"Red_1.png"], 
+                     [UIImage imageNamed:@"Green_1.png"], 
+                     [UIImage imageNamed:@"Yellow_1.png"], nil] retain];
     return self;
 }
 

@@ -19,6 +19,11 @@
 		183A103A0FE0A62F002DCDB3 /* Red.png in Resources */ = {isa = PBXBuildFile; fileRef = 183A10360FE0A62F002DCDB3 /* Red.png */; };
 		183A103B0FE0A62F002DCDB3 /* Yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 183A10370FE0A62F002DCDB3 /* Yellow.png */; };
 		189725D80FEFC0F3006FB073 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 189725D70FEFC0F3006FB073 /* ImageManager.m */; };
+		1897265B0FEFD394006FB073 /* Black.png in Resources */ = {isa = PBXBuildFile; fileRef = 189726560FEFD394006FB073 /* Black.png */; };
+		1897265C0FEFD394006FB073 /* Yellow_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 189726570FEFD394006FB073 /* Yellow_1.png */; };
+		1897265D0FEFD394006FB073 /* Red_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 189726580FEFD394006FB073 /* Red_1.png */; };
+		1897265E0FEFD394006FB073 /* Green_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 189726590FEFD394006FB073 /* Green_1.png */; };
+		1897265F0FEFD394006FB073 /* Blue_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1897265A0FEFD394006FB073 /* Blue_1.png */; };
 		1D3623260D0F684500981E51 /* CoolrswapAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CoolrswapAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -44,6 +49,11 @@
 		183A10370FE0A62F002DCDB3 /* Yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yellow.png; path = images/Yellow.png; sourceTree = "<group>"; };
 		189725D60FEFC0F3006FB073 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
 		189725D70FEFC0F3006FB073 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
+		189726560FEFD394006FB073 /* Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Black.png; path = images/Black.png; sourceTree = "<group>"; };
+		189726570FEFD394006FB073 /* Yellow_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yellow_1.png; path = images/Yellow_1.png; sourceTree = "<group>"; };
+		189726580FEFD394006FB073 /* Red_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Red_1.png; path = images/Red_1.png; sourceTree = "<group>"; };
+		189726590FEFD394006FB073 /* Green_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Green_1.png; path = images/Green_1.png; sourceTree = "<group>"; };
+		1897265A0FEFD394006FB073 /* Blue_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blue_1.png; path = images/Blue_1.png; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CoolrswapAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoolrswapAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CoolrswapAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoolrswapAppDelegate.m; sourceTree = "<group>"; };
@@ -104,6 +114,11 @@
 		183A10330FE0A61E002DCDB3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				189726560FEFD394006FB073 /* Black.png */,
+				189726570FEFD394006FB073 /* Yellow_1.png */,
+				189726580FEFD394006FB073 /* Red_1.png */,
+				189726590FEFD394006FB073 /* Green_1.png */,
+				1897265A0FEFD394006FB073 /* Blue_1.png */,
 				1834074F0FE5796500BE618B /* Transforms */,
 				183A10340FE0A62F002DCDB3 /* Blue.png */,
 				183A10350FE0A62F002DCDB3 /* Green.png */,
@@ -217,6 +232,11 @@
 				183407590FE5798100BE618B /* ColorSwap_Down_alpha.png in Resources */,
 				1834075A0FE5798100BE618B /* ColorRing_Counter_alpha.png in Resources */,
 				1834075B0FE5798100BE618B /* ColorRing_Clockwise_alpha.png in Resources */,
+				1897265B0FEFD394006FB073 /* Black.png in Resources */,
+				1897265C0FEFD394006FB073 /* Yellow_1.png in Resources */,
+				1897265D0FEFD394006FB073 /* Red_1.png in Resources */,
+				1897265E0FEFD394006FB073 /* Green_1.png in Resources */,
+				1897265F0FEFD394006FB073 /* Blue_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

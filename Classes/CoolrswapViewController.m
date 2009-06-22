@@ -11,6 +11,9 @@
 
 @implementation CoolrswapViewController
 
+// start to number the squares at this tag
+#define SQ_TAG_BASE 128
+
 // for now use a pre-defined number of  rows and cols, this may change to provide for different levels of
 // 
 #define NB_ROWS 4
@@ -52,7 +55,7 @@
         for( int col=0;col<NB_COLS;col++ ) {
             ColoredSquare * cs = [[ColoredSquare alloc] initWithImages: imageManager parentView: [self view] X:col Y:row];
             [squareViews addObject: cs];
-            cs.tag = [squareViews count]-1;
+            cs.tag = [squareViews count]-1+SQ_TAG_BASE;
             
         }
     }
@@ -188,11 +191,13 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     NSSet * allTouched = [event touchesForWindow: self.view.window];
     for( UITouch * touched in allTouched ) {
-        ColoredSquare * coloredSquare = [squareViews objectAtIndex: touched.view.tag];
-        NSLog( [NSString stringWithFormat: @"touched %d x: %d y: %d", coloredSquare.color, 
-				coloredSquare.x, coloredSquare.y ]);
-        [self doTransform: coloredSquare];
-		[self processMatches];
+        if ( touched.view.tag >= SQ_TAG_BASE  && touched.view.tag < SQ_TAG_BASE + [squareViews count] ) {
+            ColoredSquare * coloredSquare = [squareViews objectAtIndex: touched.view.tag-SQ_TAG_BASE];
+            NSLog( [NSString stringWithFormat: @"touched %d x: %d y: %d", coloredSquare.color, 
+                    coloredSquare.x, coloredSquare.y ]);
+            [self doTransform: coloredSquare];
+            [self processMatches];
+        }
         [self putRandomTransformation];
     }
 }
