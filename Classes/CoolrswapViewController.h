@@ -6,15 +6,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ImageManager;
 
 
 @interface CoolrswapViewController : UIViewController {
     
+    ImageManager * imageManager;
+    
     // array of ColoredSquare objects holding the squares, need to be mutable to allow for initialization in loop
     NSMutableArray * squareViews;
 
-    // array of images going into the squares, right now this is statically allocated
-    NSArray * squareImages;
     
 	// array of transform images going into the bottom left hand corner of screen
 	NSArray * transformImages;

@@ -13,6 +13,7 @@
 #define SQ_HEIGHT 70
 #define SQ_MARGIN 10
 
+@class ImageManager;
 
 @interface ColoredSquare : NSObject {
     int color;
@@ -20,8 +21,8 @@
 	int y;
     UIImageView * view;
     
-    // hold the array of images to be used for representing colors
-    NSArray * colorImages;
+    // hold image manager
+    ImageManager * imageManager;
 }
 
 @property (assign) int color;
@@ -29,7 +30,7 @@
 @property (assign) int y;
 @property (assign) int tag;
 
--(id)initWithImages:(NSArray*)_colorImages parentView:(UIView*)parentView X:(int)col Y:(int)row;
+-(id)initWithImages:(ImageManager*)_manager parentView:(UIView*)parentView X:(int)col Y:(int)row;
     
 
 @end

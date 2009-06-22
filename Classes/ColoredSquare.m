@@ -7,6 +7,7 @@
 //
 
 #import "ColoredSquare.h"
+#import "ImageManager.h"
 
 
 @implementation ColoredSquare
@@ -16,8 +17,8 @@
 @synthesize y;
 
 
--(id)initWithImages:(NSArray*)_colorImages parentView: (UIView*)parentView X:(int)col Y:(int)row {
-    colorImages = _colorImages;
+-(id)initWithImages:(ImageManager*)_manager parentView: (UIView*)parentView X:(int)col Y:(int)row {
+    imageManager = _manager;
     x = col;
     y = row;
 
@@ -53,7 +54,7 @@
 
 -(void)setColor:(int)_color {
     color = _color;
-    view.image = [colorImages objectAtIndex: color];
+    view.image = [imageManager getImage: color];
     [self animateFirstTouchAtPoint];
 }
 

@@ -18,6 +18,7 @@
 		183A10390FE0A62F002DCDB3 /* Green.png in Resources */ = {isa = PBXBuildFile; fileRef = 183A10350FE0A62F002DCDB3 /* Green.png */; };
 		183A103A0FE0A62F002DCDB3 /* Red.png in Resources */ = {isa = PBXBuildFile; fileRef = 183A10360FE0A62F002DCDB3 /* Red.png */; };
 		183A103B0FE0A62F002DCDB3 /* Yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 183A10370FE0A62F002DCDB3 /* Yellow.png */; };
+		189725D80FEFC0F3006FB073 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 189725D70FEFC0F3006FB073 /* ImageManager.m */; };
 		1D3623260D0F684500981E51 /* CoolrswapAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CoolrswapAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -41,6 +42,8 @@
 		183A10350FE0A62F002DCDB3 /* Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Green.png; path = images/Green.png; sourceTree = "<group>"; };
 		183A10360FE0A62F002DCDB3 /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Red.png; path = images/Red.png; sourceTree = "<group>"; };
 		183A10370FE0A62F002DCDB3 /* Yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yellow.png; path = images/Yellow.png; sourceTree = "<group>"; };
+		189725D60FEFC0F3006FB073 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
+		189725D70FEFC0F3006FB073 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CoolrswapAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoolrswapAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CoolrswapAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoolrswapAppDelegate.m; sourceTree = "<group>"; };
@@ -79,6 +82,8 @@
 				28D7ACF70DDB3853001CB0EB /* CoolrswapViewController.m */,
 				183407C40FE5A3A300BE618B /* ColoredSquare.h */,
 				183407C50FE5A3A300BE618B /* ColoredSquare.m */,
+				189725D60FEFC0F3006FB073 /* ImageManager.h */,
+				189725D70FEFC0F3006FB073 /* ImageManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				1D3623260D0F684500981E51 /* CoolrswapAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* CoolrswapViewController.m in Sources */,
 				183407C60FE5A3A300BE618B /* ColoredSquare.m in Sources */,
+				189725D80FEFC0F3006FB073 /* ImageManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

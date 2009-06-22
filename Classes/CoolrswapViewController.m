@@ -7,6 +7,7 @@
 
 #import "CoolrswapViewController.h"
 #import "ColoredSquare.h"
+#import "ImageManager.h"
 
 @implementation CoolrswapViewController
 
@@ -33,10 +34,7 @@
 */
 
 - (void)initImages {
-    squareImages = [[NSArray arrayWithObjects: [UIImage imageNamed:@"Blue.png"],
-              [UIImage imageNamed:@"Red.png"], 
-              [UIImage imageNamed:@"Green.png"], 
-              [UIImage imageNamed:@"Yellow.png"], nil] retain];
+    imageManager  = [[ImageManager alloc] init];
 	
 	transformImages = [[NSArray arrayWithObjects:
 					   [UIImage imageNamed:@"ColorSwap_Up_alpha.png"],
@@ -52,7 +50,7 @@
     
     for ( int row=0;row<NB_ROWS;row++ )  {
         for( int col=0;col<NB_COLS;col++ ) {
-            ColoredSquare * cs = [[ColoredSquare alloc] initWithImages: squareImages parentView: [self view] X:col Y:row];
+            ColoredSquare * cs = [[ColoredSquare alloc] initWithImages: imageManager parentView: [self view] X:col Y:row];
             [squareViews addObject: cs];
             cs.tag = [squareViews count]-1;
             
@@ -63,7 +61,7 @@
 - (void)putRandomSquares {
     // initialize the random generator to a random-er value
     srandom((long)[[NSDate date] timeIntervalSince1970]);
-    int nbImages = [squareImages count];    
+    int nbImages = [imageManager count];    
     for( int i=0; i<[squareViews count]; i++ ) {
         ColoredSquare * coloredSquare = (ColoredSquare*)[squareViews objectAtIndex:i];
         coloredSquare.color = random()%nbImages;
@@ -90,7 +88,7 @@
  */
 -(void)rotateColor: (ColoredSquare*)coloredSquare direction:(int)direction  {
     // for now just rotate the colors
-    int newColor = (coloredSquare.color+direction)%[squareImages count];
+    int newColor = (coloredSquare.color+direction)%[imageManager count];
     coloredSquare.color = newColor;
 }
 
@@ -182,7 +180,7 @@
         total += 1;
         totalLabel.text = [NSString stringWithFormat: @"%d", total];
         for( ColoredSquare * cs in matches ) {
-            cs.color = (cs.color + random()%([squareImages count]-1))%[squareImages count];
+            cs.color = (cs.color + random()%([imageManager count]-1))%[imageManager count];
         }
     }
 }
@@ -222,7 +220,7 @@
 
 
 - (void)dealloc {
-    [squareImages release];
+    [imageManager release];
     [squareViews release];
 	[transformImages release];
     [super dealloc];
