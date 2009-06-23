@@ -215,8 +215,8 @@
                     coloredSquare.x, coloredSquare.y ]);
             [self doTransform: coloredSquare];
             [self processMatches];
+            [self putRandomTransformation];
         }
-        [self putRandomTransformation];
     }
 }
 

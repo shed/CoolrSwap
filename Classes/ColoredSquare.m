@@ -28,13 +28,13 @@
     return self;
 }
 
-- (void)animateFirstTouchAtPoint {
+- (void)animateColor {
     
-#define GROW_ANIMATION_DURATION_SECONDS 0.4
+#define GROW_ANIMATION_DURATION_SECONDS 0.3
     
     [UIView beginAnimations:nil context:self];
     [UIView setAnimationDuration:GROW_ANIMATION_DURATION_SECONDS];
-    [UIView setAnimationRepeatCount: 3];
+    [UIView setAnimationRepeatCount: 2];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDidStopSelector:@selector(growAnimationDidStop:finished:context:)];
     CGAffineTransform transform = CGAffineTransformMakeScale(0.9, 0.9);
@@ -46,8 +46,9 @@
 - (void)growAnimationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
     
 #define MOVE_ANIMATION_DURATION_SECONDS 0.15
-    
-    view.image = [imageManager getImage: color];
+    if ( color != -1 ) {
+        view.image = [imageManager getImage: color];
+    }
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:MOVE_ANIMATION_DURATION_SECONDS];
     view.transform = CGAffineTransformMakeScale(1.1, 1.1);    
@@ -60,7 +61,7 @@
         view.image = [imageManager blackImage];
     } else {
         view.image = [imageManager getFadedImage: color];
-        [self animateFirstTouchAtPoint];
+        [self animateColor];
     }
 }
 
