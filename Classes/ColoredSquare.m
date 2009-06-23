@@ -37,7 +37,7 @@
     [UIView setAnimationRepeatCount: 3];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDidStopSelector:@selector(growAnimationDidStop:finished:context:)];
-    CGAffineTransform transform = CGAffineTransformMakeScale(1.1, 1.1);
+    CGAffineTransform transform = CGAffineTransformMakeScale(0.9, 0.9);
     view.transform = transform;
     [UIView commitAnimations];
 }
@@ -56,8 +56,12 @@
 
 -(void)setColor:(int)_color {
     color = _color;
-    view.image = [imageManager getFadedImage: color];
-    [self animateFirstTouchAtPoint];
+    if ( color == -1 ) {
+        view.image = [imageManager blackImage];
+    } else {
+        view.image = [imageManager getFadedImage: color];
+        [self animateFirstTouchAtPoint];
+    }
 }
 
 -(void)setTag:(int)_tag {

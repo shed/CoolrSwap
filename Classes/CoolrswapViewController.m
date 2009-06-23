@@ -140,7 +140,7 @@
 			ColoredSquare * cs1 = [self getSquareAtX: row Y: col];
 			ColoredSquare * cs2 = [self getSquareAtX: row+1 Y: col];
 			ColoredSquare * cs3 = [self getSquareAtX: row+2 Y: col];
-			if ( cs1.color == cs2.color && cs1.color == cs3.color ) {
+			if ( cs1.color == cs2.color && cs1.color == cs3.color && cs1.color > -1 ) {
 				NSLog( @"Found 3 in a horizontal row x: %d y: %d", row, col );
                 return [NSArray arrayWithObjects: cs1, cs2, cs3, nil];
 			}
@@ -156,7 +156,7 @@
 			ColoredSquare * cs1 = [self getSquareAtX: row Y: col];
 			ColoredSquare * cs2 = [self getSquareAtX: row Y: col+1];
 			ColoredSquare * cs3 = [self getSquareAtX: row Y: col+2];
-			if ( cs1.color == cs2.color && cs1.color == cs3.color ) {
+			if ( cs1.color == cs2.color && cs1.color == cs3.color && cs1.color > -1 ) {
 				NSLog( @"Found 3 in a vertical row x: %d y: %d", row, col );
                 return [NSArray arrayWithObjects: cs1, cs2, cs3, nil];
 			}
@@ -174,16 +174,34 @@
     return matches;
 }
 
+/*
+ * Refresh the color for the black squares.
+ */
+-(void)refreshSquares {
+    for( ColoredSquare * cs in squareViews ) {
+        if ( cs.color == -1 ) {
+            cs.color = random()%([imageManager count]);
+        }
+    }
+
+}
+
 -(void)processMatches {
+    bool hasSome = false;
     while( TRUE ) {
         NSArray * matches = [self colorsMatched];
         if ( matches == nil ) {
+            if ( hasSome ) {
+                [self performSelector:@selector(refreshSquares) withObject:self afterDelay:2];            
+
+            }
             break;
         }
+        hasSome = true;
         total += 1;
         totalLabel.text = [NSString stringWithFormat: @"%d", total];
         for( ColoredSquare * cs in matches ) {
-            cs.color = (cs.color + random()%([imageManager count]-1))%[imageManager count];
+            cs.color = -1;
         }
     }
 }

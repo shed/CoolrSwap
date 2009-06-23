@@ -13,6 +13,8 @@
     NSArray * squareImages;
     
     NSArray * fadedImages;
+    
+    UIImage * blackImage;
 }
 
 // Number of images
@@ -24,5 +26,6 @@
 // Get faded image for the give index
 -(UIImage*)getFadedImage:(int)index;
 
+-(UIImage*)blackImage;
 
 @end

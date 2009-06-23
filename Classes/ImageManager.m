@@ -20,11 +20,13 @@
                      [UIImage imageNamed:@"Red_1.png"], 
                      [UIImage imageNamed:@"Green_1.png"], 
                      [UIImage imageNamed:@"Yellow_1.png"], nil] retain];
+    blackImage = [[UIImage imageNamed: @"Black.png"] retain];
     return self;
 }
 
 -(void) dealloc
 {
+    [blackImage release];
     [squareImages release];
     [fadedImages release];
     [super dealloc];
@@ -44,6 +46,10 @@
 // Get faded image for the give index
 -(UIImage*)getFadedImage:(int)index {
     return [fadedImages objectAtIndex: index];
+}
+
+-(UIImage*)blackImage {
+    return blackImage;
 }
 
 @end
