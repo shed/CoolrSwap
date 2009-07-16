@@ -84,6 +84,7 @@
     [self initSquares];
     [self putRandomSquares];
     [self putRandomTransformation];
+	[self processMatches];
 }
 
 /**
